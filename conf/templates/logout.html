@@ -1,0 +1,16 @@
+{% extends 'header.html' %}
+{% block header %}
+	<section class="main">
+					<div class="example-wrap clearfix">
+					<h3>GoodBye!</h3>
+					<div class="demo-wrapper" align="middle">
+					<p>Logout was successfull. <a href="{{url_for('signin')}}"><strong>Click Here</strong> </a>to return to the login page.</p><br>
+					</div>
+					<pre class="code-wrapper">
+						<code><p>&nbsp;</p></code>
+					</pre>
+				</div>
+				</section>
+{% include 'footer.html' %}
+    {% endblock %}
+</html>

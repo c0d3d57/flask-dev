@@ -1,0 +1,13 @@
+{% if user.is_active() %}
+	{% extends 'header2.html' %}
+	{% block header2 %}
+		{% include 'home.html' %}
+		{% include 'footer.html' %}
+	{% endblock %}
+{% else %}
+	{% extends 'header.html' %}
+	{% block header %}
+		{% include 'home.html' %}
+		{% include 'footer.html' %}
+	{% endblock %}
+{% endif %}

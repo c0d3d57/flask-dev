@@ -1,0 +1,21 @@
+{% extends 'header.html' %}
+{% block header %}
+    <section class="main">
+        <form method="post" action="{{url_for('signin')}}">
+            {{ form.hidden_tag() }}
+        <div class="example-wrap clearfix">
+            <h3>Login - {% for msg in get_flashed_messages()%}{{msg}}{%endfor%}<td></td></h3>
+            <div class="demo-wrapper" align="middle">
+            <p>{{ form.username(placeholder="Username", class="mac") }}</p><br>
+            <p>{{ form.password(placeholder="Password", class="mac") }}</p><br>
+            <td align="left"><input type="submit" value="Login" class="metro three-d"></td>
+            <td align="right"><a href="{{url_for('signup')}}" class="metro three-d">Register</a></td>
+            </div>
+            <pre class="code-wrapper"><code>If you cannot get it here, then you cannot get it anywhere.
+                 </code>
+             </pre>
+        </div>
+    </section>
+{% include 'footer.html' %}
+    {% endblock %}
+</html>

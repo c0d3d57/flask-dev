@@ -1,0 +1,34 @@
+{% if user.is_active() %}
+	{% extends 'header2.html' %}
+	{% block header2 %}
+ 	<section class="main">
+					<div class="example-wrap clearfix">
+					<h3>About Us</h3>
+					<div class="demo-wrapper" align="middle">
+					<p>Welcome to the AboutUs page, this page is under construction.</p><br>
+					</div>
+					<pre class="code-wrapper"><code>Please check back again tomorrow for update.
+						</code>
+					</pre>
+				</div>
+				</section>
+		{% include 'footer.html' %}
+	{% endblock %}
+{% else %}
+	{% extends 'header.html' %}
+	{% block header %}
+ 	<section class="main">
+					<div class="example-wrap clearfix">
+					<h3>About Us</h3>
+					<div class="demo-wrapper" align="middle">
+					<p>Welcome to the AboutUs page, this page is under construction.</p><br>
+					</div>
+					<pre class="code-wrapper"><code>Please check back again tomorrow for update.
+						</code>
+					</pre>
+				</div>
+				</section>
+		{% include 'footer.html' %}
+	{% endblock %}
+{% endif %}
+</html>

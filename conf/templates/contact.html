@@ -1,0 +1,54 @@
+{% if user.is_active() %}
+	{% extends 'header2.html' %}
+	{% block header2 %}
+   			<section class="main">
+   				<form method="post" action="{{url_for('contact')}}">
+                	{{ form.hidden_tag() }}
+					<div class="example-wrap clearfix">
+					<h3>Contact</h3>
+					<div class="demo-wrapper" align="left">
+					<p>E-mail: admin@mandung.com<br>Phone: 08099999999</p><br><br>
+					<div class="demo-wrapper" align="middle">
+					<p>{{ form.fullname(placeholder="Full Name", class="mac") }}</p><br>
+            		<p>{{ form.phone(placeholder="Phone Number", class="mac") }}</p><br>
+            		<p>{{ form.email(placeholder="E-mail Address", class="mac") }}</p><br>
+            		<p>{{ form.subject(placeholder="Subject", class="mac") }}</p><br>
+            		<p><textarea name="message" class="mac" cols="60" rows="10"></textarea></p><br />
+            		<td align="left"><input type="submit" value="Send" class="simple-input"></td>
+					</div>
+				</div>	
+					<pre class="code-wrapper"><code>Use the form above to contact us.
+						</code>
+					</pre>
+				</div>
+				</section>
+		{% include 'footer.html' %}
+	{% endblock %}
+{% else %}
+	{% extends 'header.html' %}
+	{% block header %}
+   			<section class="main">
+   				<form method="post" action="{{url_for('contact')}}">
+                	{{ form.hidden_tag() }}
+					<div class="example-wrap clearfix">
+					<h3>Contact</h3>
+					<div class="demo-wrapper" align="left">
+					<p>E-mail: admin@mandung.com<br>Phone: 08099999999</p><br><br>
+					<div class="demo-wrapper" align="middle">
+					<p>{{ form.fullname(placeholder="Full Name", class="mac") }}</p><br>
+            		<p>{{ form.phone(placeholder="Phone Number", class="mac") }}</p><br>
+            		<p>{{ form.email(placeholder="E-mail Address", class="mac") }}</p><br>
+            		<p>{{ form.subject(placeholder="Subject", class="mac") }}</p><br>
+            		<p><textarea name="message" class="mac" cols="60" rows="10"></textarea></p><br />
+            		<td align="left"><input type="submit" value="Send" class="simple-input"></td>
+					</div>
+				</div>	
+					<pre class="code-wrapper"><code>Use the form above to contact us.
+						</code>
+					</pre>
+				</div>
+				</section>
+		{% include 'footer.html' %}
+	{% endblock %}
+{% endif %}
+</html>

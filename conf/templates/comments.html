@@ -1,0 +1,26 @@
+{% extends 'header.html' %}
+{% block header %}
+   			<section class="main">
+   				<form method="post" action="{{url_for('comments')}}">
+                	{{ form.hidden_tag() }}
+					<div class="example-wrap clearfix">
+					<h3>Comment Session - {% for msg in get_flashed_messages()%}{{msg}}{%endfor%}</h3>
+					<div class="demo-wrapper" align="middle">
+					<marquee behaviour="slide" scrollamount="2">
+					<p>{% if post %}{{ post[0].message }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ post[1].message }}{% endif %}</p>
+					</marquee>
+					<br><br><br>
+					<div class="demo-wrapper" align="middle">
+					<p>{{ form.fullname(placeholder="Name", class="mac") }}</p><br>
+            		<p><textarea name="message" placeholder="Write Your Comment Here..." class="mac" cols="60" rows="10"></textarea></p><br />
+            		<td align="left"><input type="submit" value="Comment" class="simple-input"></td>
+					</div>
+				</div>	
+					<pre class="code-wrapper"><code>Read and write comments.
+						</code>
+					</pre>
+				</div>
+				</section>
+{% include 'footer.html' %}
+    {% endblock %}
+</html>

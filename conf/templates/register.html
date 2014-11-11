@@ -1,0 +1,48 @@
+{% if user.is_active() %}
+    {% extends 'header2.html' %}
+    {% block header2 %}
+            <section class="main">
+                <div class="example-wrap clearfix">
+                    <h3>Registeration - {% for msg in get_flashed_messages()%}{{msg}}{%endfor%}<td></td></h3>
+                    <div class="demo-wrapper" align="middle">
+                    <p>User: {{ user.username }} Is already active on this session</p><br>
+                    </div>
+                    <pre class="code-wrapper"><code>If you cannot get it here, then you cannot get it anywhere.
+
+                        </code>
+                    </pre>
+                </div>
+                </section>
+        {% include 'footer.html' %}
+    {% endblock %}
+{% else %}
+    {% extends 'header.html' %}
+    {% block header %}
+            {% if 'Successfull' in keyword %}
+            {% include 'reg_success.html' %}
+            {% include 'footer.html' %}
+            {% else %}
+            <section class="main">
+                <form method="post" action="{{url_for('signup')}}">
+                    {{ form.hidden_tag() }}
+                <div class="example-wrap clearfix">
+                    <h3>Registeration - {% for msg in get_flashed_messages()%}{{msg}}{%endfor%}<td></td></h3>
+                    <div class="demo-wrapper" align="middle">
+                    <p>{{ form.username(placeholder="Username", class="mac") }}</p><br>
+                    <p>{{ form.password(placeholder="Password", class="mac") }}</p><br>
+                    <p>{{ form.email(placeholder="E-mail Address", class="mac") }}</p><br>
+                    <p>{{ form.agree(placeholder="I Accept the terms and conditions", class="mac") }} {{form.agree.label}}</p><br>
+                    <td align="left"><input type="submit" value="Done" class="metro three-d"></td>
+                    <td align="right"><a href="{{url_for('signup')}}" class="metro three-d">Reset</a></td>
+                    </div>
+                    <pre class="code-wrapper"><code>If you cannot get it here, then you cannot get it anywhere.
+
+                        </code>
+                    </pre>
+                </div>
+                </section>
+        {% include 'footer.html' %}
+            {% endif %}
+    {% endblock %}
+{% endif %}
+</html>

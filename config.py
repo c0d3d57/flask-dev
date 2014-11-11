@@ -1,0 +1,3 @@
+CSRF_ENABLED = True
+SECRET_KEY = '\xdb\xa4\xe6g\xaeI8{\xad_\xeb\x91\xb6\x83:5y\x84\xad\xec\x9b\xa2A\x9b+{[,k\xc1-\x17L\xd2\xd5\xad\xb8\xe4E\xed'
+SQLALCHEMY_DATABASE_URI = 'postgres://postgres:ignition9091@localhost:5432/mydb'
